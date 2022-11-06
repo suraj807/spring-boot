@@ -26,12 +26,36 @@ public class bookservice {
 		return bookList;
 	}
 	
+	
+	// return one seficifed book id
 	public book getbook(int id) {
 		return bookList.stream().filter(pro->pro.getId()==id).findFirst().get();
 	}
 	
+	
+	// adding new book
 	public void addbook(book b1) {
 		bookList.add(b1);
+	}
+	
+	
+	public void updatebook(book p2,int id) {
+		
+		
+		for(int i=0;i<bookList.size();i++);
+		{
+			book p1=bookList.get(id);
+			if(p1.getId()==id){
+				bookList.set(id, p2);
+				
+			}
+					
+		}
+	}
+	
+	
+	public void deletebook(int id) {
+		bookList.removeIf(boo->(boo.getId()==id));
 	}
 
 	
